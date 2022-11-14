@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { Container } from "./app.style";
 
-function App() {
+// COMPONENTS
+import Streamer from "./Streamer";
+
+// TYPES
+import { _Streamer } from "./streamer.defination";
+
+// DATA
+import __Streamers from "./streamer.data";
+
+const App: React.FC = () => {
+  const [streamers, setStreamers] = useState<null | _Streamer[]>(null);
+
+  useEffect(() => {
+    if (streamers === null) {
+      setStreamers(__Streamers);
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      {streamers?.map((streamer) => (
+        <Streamer
+          key={streamer.userID}
+          userID={streamer.userID}
+          displayName={streamer.displayName}
+          picture={streamer.picture}
+          score={streamer.score}
+        />
+      ))}
+    </Container>
   );
-}
+};
 
 export default App;

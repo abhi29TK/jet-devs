@@ -1,13 +1,88 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.user-container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.user-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: #40e0d0;
+}
+
+.user-detail .user-left {
+  position: relative;
+  z-index: 9;
+}
+
+.user-detail .user-name {
+  display: flex;
+  align-items: center;
+}
+
+.user-detail .user-img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: red;
+  z-index: 9;
+  border: 2px solid #ffffff;
+}
+
+.user-detail .user-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-detail .status-label {
+  position: absolute;
+  bottom: 0;
+  right: 9px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: green;
+  z-index: 99;
+}
+
+.user-detail .user-name .title {
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 0 10px;
+}
+
+.user-detail .user-point {
+  display: flex;
+  align-items: baseline;
+}
+
+.user-detail .user-point .point-total {
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.user-detail .user-point .point-label {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.2;
+  margin-left: 5px;
 }
