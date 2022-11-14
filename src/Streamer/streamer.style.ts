@@ -5,19 +5,14 @@ export const Root = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  border-top: 1px solid #c29999;
   border-bottom: 1px solid #c29999;
+
   position: absolute;
   left: 0;
   width: calc(100% - 20px);
-  /* height: 75px; */
-  /* transition: all 0.8s ease-in; */
-  z-index: 1;
-  /* &.item-fadeout {
-    transition: all 0.8s ease-out;
-    transition-delay: 0.8s;
-    transition-property: top; */
-  /* transition-delay: 0.8s; */
-  /* } */
+  transition: top 0.8s ease-in-out;
+
   :nth-child(2n) {
     background-color: #f2f3ff;
   }

@@ -17,9 +17,6 @@ interface _props {
   picture: string;
   score: number;
   style: { [key: string]: string };
-  className: string;
-  up: boolean;
-  index: number;
 }
 
 const Streamer: React.FC<_props> = ({
@@ -28,12 +25,9 @@ const Streamer: React.FC<_props> = ({
   picture,
   score,
   style,
-  className,
-  up,
-  index,
 }) => {
   return (
-    <Root className={className} style={style}>
+    <Root style={style}>
       <Details>
         <User>
           <Image src={picture} alt={userID} />
