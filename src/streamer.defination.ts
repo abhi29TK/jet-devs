@@ -3,4 +3,5 @@ export interface _Streamer {
   displayName: string;
   picture: string;
   score: number;
+  up: boolean;
 }

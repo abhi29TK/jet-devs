@@ -1,9 +1,9 @@
 import React from "react";
-import { Image, Ptext } from "../Reusable";
+import { Ptext } from "../Reusable/resuable.style";
+import Image from "../Reusable/Image";
 import {
   Details,
   DisplayName,
-  ImgContainer,
   Points,
   Root,
   Score,
@@ -16,6 +16,10 @@ interface _props {
   displayName: string;
   picture: string;
   score: number;
+  style: { [key: string]: string };
+  className: string;
+  up: boolean;
+  index: number;
 }
 
 const Streamer: React.FC<_props> = ({
@@ -23,12 +27,16 @@ const Streamer: React.FC<_props> = ({
   displayName,
   picture,
   score,
+  style,
+  className,
+  up,
+  index,
 }) => {
   return (
-    <Root>
+    <Root className={className} style={style}>
       <Details>
         <User>
-          <ImgContainer>{/* <Image /> */}</ImgContainer>
+          <Image src={picture} alt={userID} />
           <Status />
         </User>
         <DisplayName>{displayName}</DisplayName>
